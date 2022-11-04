@@ -1,6 +1,7 @@
 export default {
   COLORS: {
       TEXT: '#969CB2',
+      SUBTEXT: '#8D919E',
       GRAY: '#999591',
       BLACK: '#100C08',
       GRAY_100: '#B8B8B8',
