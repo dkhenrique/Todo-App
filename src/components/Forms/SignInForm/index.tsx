@@ -16,6 +16,10 @@ export function SignInForm() {
 
   function handleSignIn() {
     setIsLoading(true);
+
+    auth().signInWithEmailAndPassword(email, password)
+    .catch((error) => console.log(error))
+    .finally(() => setIsLoading(false))
   }
 
   function handleForgotPassword() {

@@ -17,9 +17,10 @@ import {
 
 export type TaskProps = TaskStyleProps & {
   id: string;
-  patrimony: string;
+  task: string;
   equipment: string;
   description: string;
+  
 }
 
 type Props = {
@@ -35,11 +36,11 @@ export function Task({ data }: Props) {
 
       <Content>
         <Header>
-          <Title>Computador Desktop</Title>
+          <Title>{data.task}</Title>
           <MaterialIcons
             name={data.status === "open" ? "hourglass-empty" : "check-circle"}
             size={24}
-            color={data.status === "open" ? theme.COLORS.SECONDARY : theme.COLORS.PRIMARY}
+            color={data.status === "open" ? theme.COLORS.ATTENTION_LIGHT9 : theme.COLORS.PRIMARY}
           />
         </Header>
 
@@ -47,7 +48,7 @@ export function Task({ data }: Props) {
           <Info>
             <MaterialIcons name="schedule" size={16} color={theme.COLORS.TEXT} />
             <Label>
-              20/01/22 às 14h
+              {data.description}
             </Label>
           </Info>
 

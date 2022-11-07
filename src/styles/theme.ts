@@ -112,7 +112,7 @@ export default {
       POPPINSBOLD: 'Poppins_700Bold',
       POPPINSLIGHT: 'Poppins_300Light',
       POPPINSMEDIUM: 'Poppins_500Medium',
-      TITLE: 'DMSerifDisplay_400Regular',
+      TITLE: 'Poppins_500Medium',
       POPPINSREGULAR: 'Poppins_400Regular',
       POPPINSEXTRABOLD: 'Poppins_800ExtraBold',
   },

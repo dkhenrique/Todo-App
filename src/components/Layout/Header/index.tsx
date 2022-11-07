@@ -3,8 +3,14 @@ import React from 'react'
 import { LogoutButton } from '../../Controllers/LogoutButton';
 import { Container, Greating, Title, SubTitle} from './styles';
 
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+
 export function Header() {
-  function handleSignOut(){}
+  function handleSignOut(){
+    auth()
+    .signOut()
+    .then(() => console.log('User signed out!'));
+  }
 
   return (
     <Container>

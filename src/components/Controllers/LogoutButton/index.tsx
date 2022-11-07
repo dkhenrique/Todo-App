@@ -3,6 +3,7 @@ import { RectButtonProps } from 'react-native-gesture-handler'
 import { useTheme } from 'styled-components/native'
 import { MaterialIcons } from '@expo/vector-icons'
 
+
 import { Container } from './styles'
 
 export function LogoutButton({ ...rest }) {

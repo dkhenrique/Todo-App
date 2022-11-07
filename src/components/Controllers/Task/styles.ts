@@ -18,7 +18,8 @@ export const Content = styled.View`
   padding: 0 15px;
   justify-content: center;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 export const Header = styled.View`
@@ -28,14 +29,16 @@ export const Header = styled.View`
 export const Status = styled.View<TaskStyleProps>`
   width: 10px;
   height: 94px;
-  background-color: ${({ theme, status }) => status === 'open' ? theme.COLORS.SECONDARY : theme.COLORS.PRIMARY};
+  background-color: ${({ theme, status }) => status === 'open' ? theme.COLORS.ATTENTION_LIGHT9 : theme.COLORS.PRIMARY};
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 `;
 
 export const Title = styled.Text`
   flex: 1;
   font-size: 18px;
   font-family: ${({ theme }) => theme.FONTS.TITLE};
-  color: ${({ theme }) => theme.COLORS.TEXT};
+  color: ${({ theme }) => theme.COLORS.TITLE};
   margin-bottom: 18px;
 `;
 

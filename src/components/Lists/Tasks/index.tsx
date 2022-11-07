@@ -1,6 +1,8 @@
 import Reacr, { useState, useEffect } from 'react';
 import { FlatList } from 'react-native'; 
 
+import firestore from '@react-native-firebase/firestore'
+
 import { Filters } from '../../Controllers/Filters';
 import { Task, TaskProps } from '../../Controllers/Task';
 import { Container, Header, Title, Counter } from './styles'
@@ -10,6 +12,27 @@ export function Tasks() {
   const [status, setStatus] = useState('open')
   const [isLoading, setIsLoading] = useState(false)
   const [tasks, setTasks] = useState<TaskProps[]>([])
+
+  useEffect(() => {
+    setIsLoading(true)
+
+    const subscribe = firestore()
+    .collection('tasks')
+    .where('status', '==', status)
+    .onSnapshot(querySnapshot => {
+      const data = querySnapshot.docs.map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      }) as TaskProps[]
+
+      setTasks(data)
+      setIsLoading(false)
+    });
+
+  return () => subscribe();
+}, [status])
 
 
   return (
